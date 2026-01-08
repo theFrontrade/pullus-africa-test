@@ -48,7 +48,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/lgoo1.png" />
       </head>
       <body
-        className={`${geistSans.variable}  antialiased min-h-screen`}
+        className={`${geistSans.variable}  bg-[#f5f5f5] antialiased min-h-screen`}
       >
         {children}
       </body>
