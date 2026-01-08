@@ -1,48 +1,36 @@
-"use client"
+"use client";
 
 interface NotesSummaryProps {
-  total: number
-  pending: number
-  synced: number
+  total: number;
+  pending: number;
+  synced: number;
 }
 
-export default function NotesSummary({ total, pending, synced }: NotesSummaryProps) {
+export default function NotesSummary({
+  total,
+  pending,
+  synced,
+}: NotesSummaryProps) {
   const cards = [
     {
       label: "Total Notes",
       value: total,
       color: "bg-blue-50 ",
-      borderColor: "border-blue-200 dark:border-blue-800",
-      textColor: "text-blue-600 dark:text-blue-400",
+      borderColor: "border-blue-200 ",
+      textColor: "text-blue-600 ",
       icon: (
         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
           <path d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2H4a1 1 0 110-2V4zm3 1h6v2H7V5zm0 4h6v2H7V9zm0 4h6v2H7v-2z" />
         </svg>
       ),
     },
-    {
-      label: "Pending Sync",
-      value: pending,
-      color: "bg-amber-50 dark:bg-amber-950",
-      borderColor: "border-amber-200 dark:border-amber-800",
-      textColor: "text-amber-600 dark:text-amber-400",
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-          />
-        </svg>
-      ),
-    },
+
     {
       label: "Synced Notes",
       value: synced,
-      color: "bg-green-50 dark:bg-green-950",
-      borderColor: "border-green-200 dark:border-green-800",
-      textColor: "text-green-600 dark:text-green-400",
+      color: "bg-green-50 ",
+      borderColor: "border-green-200 ",
+      textColor: "text-green-600 ",
       icon: (
         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
           <path
@@ -53,7 +41,29 @@ export default function NotesSummary({ total, pending, synced }: NotesSummaryPro
         </svg>
       ),
     },
-  ]
+    {
+      label: "Pending Sync",
+      value: pending,
+      color: "bg-amber-50 ",
+      borderColor: "border-gray-200 ",
+      textColor: "text-gray-600 text-gray-400",
+      icon: (
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
+      ),
+    },
+  ];
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
@@ -62,7 +72,9 @@ export default function NotesSummary({ total, pending, synced }: NotesSummaryPro
           key={card.label}
           className={`p-4 rounded-lg border   border-gray-200 transition-shadow`}
         >
-          <div className={`flex items-center justify-between flex-row-reverse gap-3 mb-3 ${card.textColor}`}>
+          <div
+            className={`flex items-center justify-between flex-row-reverse gap-3 mb-3 ${card.textColor}`}
+          >
             {card.icon}
             <p className="text-sm font-semibold">{card.label}</p>
           </div>
@@ -70,5 +82,5 @@ export default function NotesSummary({ total, pending, synced }: NotesSummaryPro
         </div>
       ))}
     </div>
-  )
+  );
 }
