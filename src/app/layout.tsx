@@ -1,11 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Roboto } from "next/font/google";
+import { Livvic } from "next/font/google";
 
 import "./globals.css";
 
-const geistSans = Roboto({
+const geistSans = Livvic({
   weight: ["400", "700"],
-  variable: "--font-geist-sans",
+  variable: "--font-livvic",
   subsets: ["latin"],
 });
 
@@ -49,6 +49,7 @@ export default function RootLayout({
       </head>
       <body
         className={`${geistSans.variable}  bg-[#f5f5f5] antialiased min-h-screen`}
+        style={{ fontFamily: "var(--font-livvic), sans-serif" }}
       >
         {children}
       </body>
