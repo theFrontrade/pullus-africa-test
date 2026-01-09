@@ -110,12 +110,12 @@ export default function HomePage() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="">
-                <Image 
-                src="/lgoo1.png"
-                width={50}
-                height={10}
-                alt="Pullus Africa"
-                /> 
+                <Image
+                  src="/lgoo1.png"
+                  width={50}
+                  height={10}
+                  alt="Pullus Africa"
+                />
               </div>
               <div>
                 <h1 className="md:text-xl  font-bold text-gray-900">
@@ -157,23 +157,6 @@ export default function HomePage() {
                   Sync
                 </Button>
               )}
-
-              <Button variant="primary" onClick={handleCreateNew}>
-                <svg
-                  className="w-4 h-4 mr-1"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 4v16m8-8H4"
-                  />
-                </svg>
-                New Note
-              </Button>
             </div>
           </div>
         </div>
@@ -187,7 +170,7 @@ export default function HomePage() {
         )}
 
         {!isOnline && (
-          <div className="mb-4 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+          <div className="mb-2 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
             <div className="flex items-center gap-2">
               <svg
                 className="w-5 h-5 text-yellow-600"
@@ -209,6 +192,28 @@ export default function HomePage() {
             </div>
           </div>
         )}
+        <div className="flex items-end justify-end mb-4">
+          <Button
+            variant="primary"
+            onClick={handleCreateNew}
+            className="text-xs md:text-sm p-1!"
+          >
+            <svg
+              className="w-4 h-4 mr-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 4v16m8-8H4"
+              />
+            </svg>
+            New Note
+          </Button>
+        </div>
         <div>
           <NotesSummary
             total={notes.length}
